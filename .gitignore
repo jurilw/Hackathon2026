@@ -1,0 +1,53 @@
+# ── Data files (download separately) ──────────────────────────────────────
+*.h5ad
+*.h5
+*.hdf5
+data_prep/output/
+data/onek1k/
+data/scRNA-seq_geneformer/*.parquet
+
+# ── Notebook / run outputs (generated locally) ───────────────────────────────
+results/
+
+# ── Apptainer image (too large for git; staged on shared scratch) ─────────
+container/*.sif
+
+# ── Model outputs ──────────────────────────────────────────────────────────
+models/output/
+
+# ── Submissions (personal) ────────────────────────────────────────────────
+submission/my_*.csv
+submission/*_submission.csv
+
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Environments ──────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+.conda/
+
+# ── Editors / OS ──────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+
+# ── SLURM logs ────────────────────────────────────────────────────────────
+slurm-*.out
+
+# Exclude full raw data directory
+data/
+
+# Exclude full container directory
+container/

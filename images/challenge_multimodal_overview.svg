@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" role="img" aria-labelledby="title desc">
+  <title id="title">Multi-modal inputs for donor age prediction</title>
+  <desc id="desc">Diagram: PBMC scRNA-seq, Geneformer embeddings, optional covariates feed a model that outputs predicted chronological age.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4f1eb"/>
+      <stop offset="100%" style="stop-color:#e8e4dc"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e4d5c"/>
+      <stop offset="100%" style="stop-color:#163a45"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a6f7f"/>
+      <stop offset="100%" style="stop-color:#1d5563"/>
+    </linearGradient>
+    <linearGradient id="hub" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c75b2b"/>
+      <stop offset="100%" style="stop-color:#a84820"/>
+    </linearGradient>
+    <filter id="soft" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="b"/>
+      <feOffset in="b" dx="0" dy="2" result="o"/>
+      <feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#4a6b72"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#8a8478"/>
+    </marker>
+    <marker id="arrowOut" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#a84820"/>
+    </marker>
+  </defs>
+  <rect width="920" height="340" fill="url(#bg)"/>
+  <text x="460" y="38" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#142428">Predict chronological age from multi-modal blood data</text>
+  <text x="460" y="60" text-anchor="middle" font-family="system-ui, Segoe UI, sans-serif" font-size="12" fill="#5a5a52">Onek1K PBMC - 981 donors - regression (continuous years)</text>
+  <g filter="url(#soft)">
+    <rect x="40" y="95" width="200" height="100" rx="8" fill="url(#card1)"/>
+    <rect x="40" y="205" width="200" height="95" rx="8" fill="url(#card2)"/>
+    <rect x="40" y="85" width="200" height="8" rx="2" fill="#3db8a1"/>
+  </g>
+  <text x="140" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#b8e8df">TRANSCRIPTOMICS</text>
+  <text x="140" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Single-cell RNA-seq</text>
+  <text x="140" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c5dfe8">PBMC to pseudobulk by cell type</text>
+  <text x="140" y="178" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#9ec9d4">Gene x cell-type features per donor</text>
+  <text x="140" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#b8e8df">FOUNDATION MODEL</text>
+  <text x="140" y="248" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Geneformer embeddings</text>
+  <text x="140" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c5dfe8">Cell-level, pooled per donor and type</text>
+  <text x="140" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#9ec9d4">Zero-shot representation learning</text>
+  <rect x="40" y="308" width="200" height="22" rx="4" fill="none" stroke="#8a8478" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="140" y="323" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6a655c">+ Optional: sex, PRS, PCA (where provided)</text>
+  <path d="M 250 145 L 330 165" stroke="#4a6b72" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 250 250 L 330 185" stroke="#4a6b72" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 250 319 L 315 195" stroke="#8a8478" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arrowGray)"/>
+  <g filter="url(#soft)">
+    <rect x="330" y="130" width="200" height="120" rx="12" fill="url(#hub)"/>
+  </g>
+  <text x="430" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#fff5f0">Your approach</text>
+  <text x="430" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#ffd4c4">Combine, engineer, fuse features</text>
+  <text x="430" y="214" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ffcdb8">ML: RF, NN, boosting, ...</text>
+  <text x="430" y="238" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#e8b5a3">Train / val / held-out test</text>
+  <path d="M 535 190 L 610 190" stroke="#a84820" stroke-width="3" fill="none" marker-end="url(#arrowOut)"/>
+  <g filter="url(#soft)">
+    <rect x="620" y="145" width="260" height="90" rx="10" fill="#142428" stroke="#c75b2b" stroke-width="2"/>
+  </g>
+  <text x="750" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#f0ebe3">Predicted age</text>
+  <text x="750" y="202" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#e8a882">years (continuous)</text>
+  <text x="750" y="222" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9db0b5">Regression output per donor</text>
+  <rect x="620" y="255" width="260" height="68" rx="6" fill="#ffffff" opacity="0.92" stroke="#d4cfc4"/>
+  <text x="750" y="278" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#2a3a3e">Why multi-modal?</text>
+  <text x="630" y="296" font-family="system-ui, sans-serif" font-size="9" fill="#4a5558">Expression layers, foundation embeddings, and covariates</text>
+  <text x="630" y="310" font-family="system-ui, sans-serif" font-size="9" fill="#4a5558">can carry complementary signal for biological age.</text>
+</svg>
